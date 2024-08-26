@@ -1,4 +1,4 @@
-import React from 'react'
+
 import LikeUnlike from './LikeUnlike'
 export default function VideoDescription() {
   return (
