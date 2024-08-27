@@ -30,7 +30,7 @@ const relatedVideoSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(fetchRelatedVideo.fulfilled, (state, action) => {
-        (state.isLoading = false), (state.video = action.payload);
+        (state.isLoading = false), (state.relatedVideos = action.payload);
       })
       .addCase(fetchRelatedVideo.rejected, (state, action) => {
         state.isLoading = false;
