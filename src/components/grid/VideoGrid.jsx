@@ -6,14 +6,18 @@ import VideoGridItem from "./VideoGridItem";
 export default function VideoGrid() {
   const dispatch = useDispatch();
 
+
+
   // state takeo amader lagbe
 
   const { videos, isLoading, isError, error } = useSelector(
     (state) => state.videos
   );
+
+  const {tags, search} = useSelector((state)=> state.filters)
   useEffect(() => {
-    dispatch(fetchVideos());
-  }, [dispatch]);
+    dispatch(fetchVideos({tags, search}));
+  }, [dispatch, tags, search]);
 
   // deciding what to render error message ta dekhabo naki videos gula dekhabo. videos thakle videos gula dekhabo. r jode videos na ase tahle error message gula dekhabo
 

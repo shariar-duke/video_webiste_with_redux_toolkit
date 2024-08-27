@@ -6,6 +6,7 @@ export default function Tag({tag}) {
 
   const {title} = tag
   const dispatch = useDispatch()
+  console.log("the title is", title)
   // get the state 
   const {tags:selectedTags} = useSelector(state => state.filters)
   console.log("The tags are", selectedTags)
