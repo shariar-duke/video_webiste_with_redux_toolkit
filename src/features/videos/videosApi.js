@@ -1,7 +1,17 @@
 import axios from "../../utils/axios.js"
-export const getVideos =async()=> 
+export const getVideos =async(tags, search)=> 
 {
-  const response = await axios.get('/videos')
+  let queryStirng =""
+  if(tags.lenght >0) 
+  {
+    queryStirng += tags.map((tag)=> `tags_like=${tag}`).join("&")
+  }
+
+  if(search !="") 
+  {
+    queryStirng += `&q=${search}`
+  }
+  const response = await axios.get(`/videos/?${queryStirng}`)
 
   return response.data
 }
