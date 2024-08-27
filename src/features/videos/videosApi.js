@@ -2,7 +2,7 @@ import axios from "../../utils/axios.js"
 export const getVideos =async(tags, search)=> 
 {
   let queryStirng =""
-  if(tags.lenght >0) 
+  if(tags.length >0) 
   {
     queryStirng += tags.map((tag)=> `tags_like=${tag}`).join("&")
   }
